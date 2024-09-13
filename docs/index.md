@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "TODO: Title"
-  text: "TODO: Subtitle"
-  tagline: "TODO: Tagline"
+  name: "Ben Sheres"
+  text: "another MIT student's portfolio"
+  tagline: "straight out of 6.104"
   actions:
     - theme: brand
       text: Template Repository
