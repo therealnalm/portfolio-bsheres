@@ -23,5 +23,5 @@ features:
     link: /assignments
   - title: About Me
     details: You'll implement a small bio about yourself on here!
-    link: about
+    link: /about
 ---
