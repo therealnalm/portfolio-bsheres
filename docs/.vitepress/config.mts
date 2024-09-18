@@ -11,13 +11,12 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Blogs", link: "/blogs" },
+      { text: "About", link: "/about" },
     ],
 
     sidebar: [
-      {
-        text: "Blogs",
-        link: "/blogs",
-      },
+      { text: "Blogs", link: "/blogs" },
+      { text: "About", link: "/about" },
     ],
 
     socialLinks: [{ icon: "github", link: "https://github.com/61040-fa24" }],
