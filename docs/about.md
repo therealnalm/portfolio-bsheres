@@ -62,4 +62,4 @@ Feel free to reach out via:
 - **LinkedIn**: [Your LinkedIn URL]
 - **GitHub**: [Your GitHub URL]
 
-![Ben-Spain](../assets/images/Ben-Spain.png)
+![Ben-Spain](../assets/images/Ben-Spain.jpg)
