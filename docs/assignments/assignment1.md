@@ -120,6 +120,8 @@ _What would you like to see in social media?_
 
 On social media, sometimes when there is a bollywood song, I like it and haven't heard it. Sometimes when I like the song, its nice that you can make a clip out of it. I wish there was a link that would take me to where I can buy or listen to the full song instead of just using the clip. Same thing with movies or clips from movies but have a more direct. Same thing for sports, if theres a clip of the game or score somewhere, there should be a link directly to the game.
 
+---
+
 **_Interview 2: Meagan Rowlett_**
 
 Questions:
@@ -165,7 +167,7 @@ Yes, but I don't really mind. I hate when it shows me people I don't follow. If 
 
 _How much would you like to use social media?_
 
-            20 mins /day
+20 mins /day
 
 _How much do you use social media now?_
 
