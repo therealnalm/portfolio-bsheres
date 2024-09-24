@@ -25,13 +25,13 @@ The highlights feature from instagram allows users to organize and archive story
 
 # Memories
 
-![Snap-Memory](../../assets/images/memories1.webp)
+![Snap-Memory](../../assets/images/memories1.png)
 
 The memories feature from snapchat allows users to save their images/posts on snapchat's servers instead of locally on their devices. Although this implies that you will take photos from the app and not the device's native photo app, the part of the concept that I'd like to elaborate on is for users to be able to save images and their accompanying journal entries privately for their own personal viewing or public sharing at a later time.
 
 # Share Elsewhere
 
-![Share-Elsewhere](../../assets/images/shareElsewhere.webp)
+![Share-Elsewhere](../../assets/images/shareElsewhere.png)
 
 Share elsewhere allows users on snapchat to send snap stories or memories on other platforms. A similar feature exists on tik tok to allow you to share a post with someone not on the platform. That said, both of these features are designed to draw users into their ecosystem with tik tok bringing you to a web page and snapchat. OpenJournal's share feature will be designed to encourage continued conversations outside of the app.
 
@@ -43,20 +43,21 @@ Taken from iMessage, in recent updates, when you share multiple photos at once, 
 
 # Close friends
 
-![close-Friends](../../assets/images/closeFriends.webp)
+![close-Friends](../../assets/images/closeFriends.png)
 
 Instagram allows you to add other users to your account as "Close friends", granting them viewing priveledges on posts or stories that you designate as only for close friends. OpenJournal might have an option to select close friends to view more private posts or may choose to use more of a "private story" approach like snapchat where you can select exactly which friends can view a certain category.
 
 # Flashbacks
 
-![Share-Elsewhere](../../assets/images/flashback1.webp)
+![Share-Elsewhere](../../assets/images/flashback1.png)
 
 Snapchat will periodically bring up old memories to remind users of what they took photos of or posted at different intervals (ex: one year ago today, one month ago, etc).
 OpenJournal should have a similar functionality to support its role as a memory book for users.
 
 # Audio
 
-Instagram and snapchat both have features that
+![Sghare-Elsewhere](../../assets/images/audio.png)
+Instagram and snapchat both have features that allow users to add audio (usually in the form of music) over a post or story. OpenJournal will also allow for this but go one step further and allow users to stitch together audio files recorded on their own devices (or found elsewhere) to overlay on their journal entries. The idea is not to necesarily have a high-energy song playing over
 
 ## Feature Ideas Brainstorm
 
