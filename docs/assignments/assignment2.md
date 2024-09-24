@@ -37,7 +37,7 @@ Share elsewhere allows users on snapchat to send snap stories or memories on oth
 
 # Stack of Photos
 
-![Stack-Demo](../../assets/images/Stack.PNG)
+![Stack-Demo](../../assets/images/Stack.png)
 
 Taken from iMessage, in recent updates, when you share multiple photos at once, they are presented to the receiving user in a stack that is easy to swipe through to quickly view all of them before deciding to magnify and actually inspect each one. OpenJournal could have a similar visibility feature to allow users to view either collections of their journals or individual journals easily before actually opening them up.
 
@@ -61,4 +61,32 @@ Instagram and snapchat both have features that allow users to add audio (usually
 
 ## Feature Ideas Brainstorm
 
-**Entry**
+**Pages**
+
+Each "page" of the app will contain a set of journal entries with a common theme, whether that be journal entries shared from friends, or a user's own journal entries.
+
+**Workbook**
+
+The workbook allows users to construct journal entries using a combination of longer-form text, images, and audio.
+
+**Converse**
+
+Converse allows you to write a response to a friend's public journal entry that will be sent to them in a shared iMessage chat to begin a conversation outside of OpenJournal.
+
+**Pose**
+
+Allows you to pose a question or journal entry to your friends on the app to respond in journal entries of their own.
+
+**Respond**
+
+Designates a journal entry as a response to another journal entry
+
+**Threads**
+
+Forms a relation between journal entries where entries become responses to the entry that came before it in the thread.
+
+**My Journal**
+
+A set of journal entries that are private to an individual user.
+
+\*\*
