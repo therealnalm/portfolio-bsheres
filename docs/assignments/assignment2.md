@@ -37,7 +37,7 @@ Share elsewhere allows users on snapchat to send snap stories or memories on oth
 
 # Stack of Photos
 
-![Stack-Demo](../../assets/images/Stack.png)
+![Stack-Demo](../../assets/images/imageStack.png)
 
 Taken from iMessage, in recent updates, when you share multiple photos at once, they are presented to the receiving user in a stack that is easy to swipe through to quickly view all of them before deciding to magnify and actually inspect each one. OpenJournal could have a similar visibility feature to allow users to view either collections of their journals or individual journals easily before actually opening them up.
 
