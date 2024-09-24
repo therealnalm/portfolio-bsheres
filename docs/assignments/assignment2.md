@@ -37,7 +37,10 @@ Share elsewhere allows users on snapchat to send snap stories or memories on oth
 
 # Stack of Photos
 
-![Stack-Demo](../../assets/images/StackDemo.MP4)
+<video width="886" height="1920" controls>
+  <source src="..\..\assets\images\StackDemo.MP4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 Taken from iMessage, in recent updates, when you share multiple photos at once, they are presented to the receiving user in a stack that is easy to swipe through to quickly view all of them before deciding to magnify and actually inspect each one. OpenJournal could have a similar visibility feature to allow users to view either collections of their journals or individual journals easily before actually opening them up.
 
@@ -57,6 +60,7 @@ OpenJournal should have a similar functionality to support its role as a memory 
 # Audio
 
 ![Sghare-Elsewhere](../../assets/images/audio.png)
+
 Instagram and snapchat both have features that allow users to add audio (usually in the form of music) over a post or story. OpenJournal will also allow for this but go one step further and allow users to stitch together audio files recorded on their own devices (or found elsewhere) to overlay on their journal entries. The idea is not to necesarily have a high-energy song playing over
 
 ## Feature Ideas Brainstorm
