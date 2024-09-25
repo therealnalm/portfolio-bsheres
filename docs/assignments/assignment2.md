@@ -15,7 +15,7 @@ layout: doc
 
 # Highlights
 
-![Highlights](../../assets/images/highlights3.avif)
+![Highlights](../../assets/images/highlights1.avif)
 
 The highlights feature from instagram allows users to organize and archive story posts by categories that they define. Although the bubbles with caption feel like a nice way to present categories, it might be nice to represent them in a way that shows a relational value (like timeline) to allow for more thoughtful organization. In OpenJournal, the highlight concept might be useful to allow users to categorize and organize their journals.
 
