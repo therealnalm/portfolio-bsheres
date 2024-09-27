@@ -1,5 +1,5 @@
 ---
-title: Assignment 3: Convergent Design
+title: Assignment 3 Convergent Design
 layout: doc
 ---
 
