@@ -13,6 +13,7 @@ layout: doc
 
 # Entry \[Text, Image]
 
+|:---: | :---: |
 | Purpose | To allow users to record and/or communicate their thoughts and feelings via text and visuals |
 | Operational Principle | A user writes a piece of text to accompany some visuals and it can be viewed later |
 | State | caption: Text, visuals: set Image |
