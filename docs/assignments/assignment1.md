@@ -1,5 +1,5 @@
 ---
-title: Assignment 1: Social Media Needfinding
+title: Assignment 1 Social Media Needfinding
 layout: doc
 ---
 

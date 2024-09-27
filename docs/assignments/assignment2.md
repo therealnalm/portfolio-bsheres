@@ -1,5 +1,5 @@
 ---
-title: Assignment 2: Divergent Design
+title: Assignment 2 Divergent Design
 layout: doc
 ---
 
