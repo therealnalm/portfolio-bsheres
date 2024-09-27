@@ -27,7 +27,7 @@ layout: doc
 |        Purpose        | Store and access multiple entries in one location based on a common theme/purpose |
 | Operational Principle |             You put your entries in a journal to keep them organized              |
 |         State         |                               entries: Set\[Entry]                                |
-|        Actions        |                      add(entry: Entry); remove(entry: Entry)                      |
+|        Actions        |           create(name: String), add(entry: Entry); remove(entry: Entry)           |
 
 # Reminding \[Object, Time]
 
@@ -54,15 +54,35 @@ layout: doc
 |        Purpose        |    Create a linear relationship between multiple of the same object    |
 | Operational Principle | Given an object, if you want a new object to follow it, you chain them |
 |         State         |                   object: Object -> 1 parent: Object                   |
-|        Actions        |                        addToEnd(object: Object)                        |
+|        Actions        |           makeChain(head: Object), addToEnd(object: Object)            |
 
 # Friending \[Party]
 
-|                       |                                                                                    |
-| :-------------------: | :--------------------------------------------------------------------------------: |
-|        Purpose        |            Create a mutually accepted relationship between two parties             |
-| Operational Principle |    You and a friend both want to establish a relationship so you become friends    |
-|         State         |                         friendPairs: \[friend1, friend2][]                         |
-|        Actions        | befriend(friend1: Party, friend2: Party), unfriend(friend1: Party, friend2: Party) |
+|                       |                                                                           |
+| :-------------------: | :-----------------------------------------------------------------------: |
+|        Purpose        |                 Distinguish a party as special to a user                  |
+| Operational Principle | You want a user on an app to be closer to you so you add them as a friend |
+|         State         |                       friends: set of Party objects                       |
+|        Actions        |             befriend(friend: Party), unfriend(friend: Party)              |
 
-##
+# Permissioning \[Party, Action]
+
+|                       |                                                                                                                            |
+| :-------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+|        Purpose        |                             To discern certain parties as being allowed to do certain actions                              |
+| Operational Principle |                   You want to allow friend Z to come to your house so you give them permission to do so                    |
+|         State         |                                        action: Action -> permitted: Set of Parties                                         |
+|        Actions        | grantPerm(party: Party, action: Action), checkPerm(party: Party, action: Action), removePerm(party: Party, action: Action) |
+
+## Synchronizations
+
+sync post(text: String, images: Image, myJournal: Journal)
+
+- const myEntry = Entry.create(text, images)
+- myJournal.add(myEntry)
+
+sync respond(respondTo: Entry, text: String, image: Image)
+
+- const response = Entry.create(text, images)
+- Chain.makeChain(respondTo)
+- Chain.addToEnd(response)
