@@ -80,13 +80,13 @@ sync viewEntry(poster: Party, viewer: Party, post: Entry)
 
 - if (Entry.Journal.checkPerm(viewer, view)) {post.show()}
 
+## Dependencies
+
+![Dependencies](../../assets/images/Dependencies.jpg)
+
 ## Wireframes
 
-Wireframe 1: Create new Entry
-
-https://www.figma.com/proto/e4zHANtKvQJpXJAVmudLab/OpenJournal-WireFrame-1?node-id=0-1&t=GyPYS0mBYTjVQBmf-1
-
-Wireframe 2: Create new Journal
+[Wireframe: Create new Entry and Journal](https://www.figma.com/design/e4zHANtKvQJpXJAVmudLab/OpenJournal-WireFrame-1?node-id=0-1&t=GyPYS0mBYTjVQBmf-1)
 
 ## Notes
 
