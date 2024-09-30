@@ -18,7 +18,7 @@ layout: doc
 |        Purpose        | To allow users to record and/or communicate their thoughts and feelings via text and visuals |
 | Operational Principle |      A user writes a piece of text to accompany some visuals and it can be viewed later      |
 |         State         |                              caption: Text, visuals: set Image                               |
-|        Actions        |                           create(text: String, visuals: Image[]);                            |
+|        Actions        |                  create(text: String, visuals: Image[]), show(user: Party);                  |
 
 # Journaling \[Entry]
 
@@ -29,41 +29,23 @@ layout: doc
 |         State         |                               entries: Set\[Entry]                                |
 |        Actions        |           create(name: String), add(entry: Entry); remove(entry: Entry)           |
 
-# Reminding \[Object, Time]
+# Threading \[Object]
 
-|                       |                                                                                                              |
-| :-------------------: | :----------------------------------------------------------------------------------------------------------: |
-|        Purpose        |                           Have something brought to your attention at a later date                           |
-| Operational Principle | A reminder for and object is set for 3 days later, and at that point in time it is brought to your attention |
-|         State         |                                       object: Object; remindTime: time                                       |
-|        Actions        |                                  set(object: Object, time: Time); remind()                                   |
-
-# Platform Sending \[Object, Platform]
-
-|                       |                                                             |
-| :-------------------: | :---------------------------------------------------------: |
-|        Purpose        |            Bring an object to a certain platform            |
-| Operational Principle | You want to send an object to someone on a certain platform |
-|         State         |             platform: Platform; object: Object              |
-|        Actions        |          send(object: Object, platform: Platform)           |
-
-# Chain Linking \[Object]
-
-|                       |                                                                        |
-| :-------------------: | :--------------------------------------------------------------------: |
-|        Purpose        |    Create a linear relationship between multiple of the same object    |
-| Operational Principle | Given an object, if you want a new object to follow it, you chain them |
-|         State         |                   object: Object -> 1 parent: Object                   |
-|        Actions        |           makeChain(head: Object), addToEnd(object: Object)            |
+|                       |                                                                                  |
+| :-------------------: | :------------------------------------------------------------------------------: |
+|        Purpose        |     Create a linear ordered relationship between multiple of the same object     |
+| Operational Principle | Given an object, if you want a new object to follow it, you add it to the thread |
+|         State         |     object: Object -> 1 parent: Object, object: Object -> 0-1 child: Object      |
+|        Actions        |                makeThread(head: Object), addToEnd(object: Object)                |
 
 # Friending \[Party]
 
-|                       |                                                                           |
-| :-------------------: | :-----------------------------------------------------------------------: |
-|        Purpose        |                 Distinguish a party as special to a user                  |
-| Operational Principle | You want a user on an app to be closer to you so you add them as a friend |
-|         State         |                       friends: set of Party objects                       |
-|        Actions        |             befriend(friend: Party), unfriend(friend: Party)              |
+|                       |                                                                              |
+| :-------------------: | :--------------------------------------------------------------------------: |
+|        Purpose        |                   Distinguish a party as special to a user                   |
+| Operational Principle |  You want a user on an app to be closer to you so you add them as a friend   |
+|         State         |                        friends: set of Party objects                         |
+|        Actions        | befriend(friend: Party), unfriend(friend: Party), checkFriend(friend: Party) |
 
 # Permissioning \[Party, Action]
 
@@ -76,13 +58,25 @@ layout: doc
 
 ## Synchronizations
 
-sync post(text: String, images: Image, myJournal: Journal)
+sync post(poster: Party, text: String, images: Image, journal: Journal)
 
 - const myEntry = Entry.create(text, images)
-- myJournal.add(myEntry)
+- if checkPerm(poster, Journalviewers)(journal.add(myEntry)) else (throw error)
+- newThread = Threading.makeThread(myEntry)
 
-sync respond(respondTo: Entry, text: String, image: Image)
+sync respond(poster: Party, respondTo: Thread, text: String, image: Image)
 
 - const response = Entry.create(text, images)
-- Chain.makeChain(respondTo)
-- Chain.addToEnd(response)
+- if checkPerm(poster, Journalviewers){respondTo.journal.add(myEntry)} else (throw error)
+- respondTo.addToEnd(response)
+
+sync createJournal(name: String, members: Party[])
+
+- const Journal = Journal.create(name)
+- Permissioning.grantPerm(members, viewJournal)
+
+## Notes
+
+I initially came up with too many unrelated concepts that didn't sync up to create any features. I was also missing the concept of permissioning and friending that would allow users to only have their posts viewed by specific other users and make journals special. As well, it took a couple of iterations to fully flesh out what actions would be necessary. Ulimately, I feel I was able to create a suite of concepts that are intrinsically independent and cover a basic suite of functionality that I intend to incorporate in my app although I am missing any concepts related to users and users logging in.
+
+## Tradeoffs
