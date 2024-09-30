@@ -18,7 +18,7 @@ layout: doc
 |        Purpose        | To allow users to record and/or communicate their thoughts and feelings via text and visuals |
 | Operational Principle |      A user writes a piece of text to accompany some visuals and it can be viewed later      |
 |         State         |                              caption: Text, visuals: set Image                               |
-|        Actions        |                  create(text: String, visuals: Image[]), show(user: Party);                  |
+|        Actions        |                       create(text: String, visuals: Image[]), show();                        |
 
 # Journaling \[Entry]
 
@@ -36,16 +36,16 @@ layout: doc
 |        Purpose        |     Create a linear ordered relationship between multiple of the same object     |
 | Operational Principle | Given an object, if you want a new object to follow it, you add it to the thread |
 |         State         |     object: Object -> 1 parent: Object, object: Object -> 0-1 child: Object      |
-|        Actions        |                makeThread(head: Object), addToEnd(object: Object)                |
+|        Actions        |   makeThread(head: Object), addToEnd(object: Object), hasNext(object: Object)    |
 
 # Friending \[Party]
 
-|                       |                                                                              |
-| :-------------------: | :--------------------------------------------------------------------------: |
-|        Purpose        |                   Distinguish a party as special to a user                   |
-| Operational Principle |  You want a user on an app to be closer to you so you add them as a friend   |
-|         State         |                        friends: set of Party objects                         |
-|        Actions        | befriend(friend: Party), unfriend(friend: Party), checkFriend(friend: Party) |
+|                       |                                                                               |
+| :-------------------: | :---------------------------------------------------------------------------: |
+|        Purpose        |                   Distinguish a party as special to a user                    |
+| Operational Principle |   You want a user on an app to be closer to you so you add them as a friend   |
+|         State         |                         friends: set of Party objects                         |
+|        Actions        | befriend(friend: Party), unfriend(friend: Party), checkFriends(friend: Party) |
 
 # Permissioning \[Party, Action]
 
@@ -67,16 +67,35 @@ sync post(poster: Party, text: String, images: Image, journal: Journal)
 sync respond(poster: Party, respondTo: Thread, text: String, image: Image)
 
 - const response = Entry.create(text, images)
-- if checkPerm(poster, Journalviewers){respondTo.journal.add(myEntry)} else (throw error)
+- if (checkPerm(poster, Journalviewers) && !hasNext(respondTo)){respondTo.journal.add(myEntry)} else {throw error}
 - respondTo.addToEnd(response)
 
-sync createJournal(name: String, members: Party[])
+sync createJournal(owner: Party, name: String, members: Party[])
 
 - const Journal = Journal.create(name)
+- Owner.Friending.checkFriend(members)
 - Permissioning.grantPerm(members, viewJournal)
+
+sync viewEntry(poster: Party, viewer: Party, post: Entry)
+
+- if (Entry.Journal.checkPerm(viewer, view)) {post.show()}
+
+## Wireframes
+
+Wireframe 1: Create new Entry
+
+https://www.figma.com/proto/e4zHANtKvQJpXJAVmudLab/OpenJournal-WireFrame-1?node-id=0-1&t=GyPYS0mBYTjVQBmf-1
+
+Wireframe 2: Create new Journal
 
 ## Notes
 
 I initially came up with too many unrelated concepts that didn't sync up to create any features. I was also missing the concept of permissioning and friending that would allow users to only have their posts viewed by specific other users and make journals special. As well, it took a couple of iterations to fully flesh out what actions would be necessary. Ulimately, I feel I was able to create a suite of concepts that are intrinsically independent and cover a basic suite of functionality that I intend to incorporate in my app although I am missing any concepts related to users and users logging in.
 
 ## Tradeoffs
+
+1. Who's on first? The first tradeoff that I had to consider was what level to manage friends, privacy, and visibility since there are two levels that it could be managed at: the post level and the journal level. I want users to think about sharing journal entries as something they do with a predetermined group and not a decision that needs to be made each time they make a new entry. Conversely, if a friend can see a certain journal, they should be able to see all associated entries and not just a specific subset. As a result, I decided to handle the sharing permission at the journal level where anyone who is added to a journal can see all entries inside of it and even post if allowed.
+
+2. So, what are we? The second tradeoff I had to consider was the manner in which friends add each other. Although it isn't specified by a synchronization, I wanted to make the friend process as minimally invasive as possible; importantly, users cannot find a publicly available list of friends to easily add people they might not be as close with, and there is no "request" feature or ability to see who wants to be friends with you. If you try to add someone as a friend, it will not notify them, but will automatically display that you are both friends if the other user has also added you.
+
+3. Not all at once! The third design decision I made was regarding responses and if one entry could have more than one response. In order to be able to more linearly display responses as actual threads instead of pairs, I decided to only allow each entry to have one response so threads will be linear and not form trees.
