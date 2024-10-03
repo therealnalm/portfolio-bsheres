@@ -63,3 +63,19 @@ Feel free to reach out via:
 - **GitHub**: [Your GitHub URL]
 
 ![Ben-Spain](../assets/images/Ben-Spain.jpg)
+
+<div id="FAQ" style="text-align:center;border:2px solid gray;">
+<h1><b>FAQ</b></h1>
+<p>
+<b>What is your favorite ice cream?</b> <br>
+<i> I don't eat ice cream</i> <br>
+<b>Why don't you eat ice cream?</b><br>
+<i> Probably cookies 'n cream or cookie dough</i><br>
+<b>You don't eat ice cream because of cookies 'n cream?</b><br>
+<i> No, that's just one of my favorite flavors</i><br>
+</p>
+</div>
+
+<footer style="text-align:center">
+<a href="mailto:bsheres@mit.edu">Questions? E-mail me at bsheres@mit.edu</a>
+</footer>
