@@ -86,7 +86,7 @@ sync viewEntry(poster: Party, viewer: Party, post: Entry)
 
 ## Wireframes
 
-[Wireframe: Create new Entry and Journal](https://www.figma.com/design/e4zHANtKvQJpXJAVmudLab/OpenJournal-WireFrame-1?node-id=0-1&t=GyPYS0mBYTjVQBmf-1)
+![Wireframe: Create new Entry and Journal](https://www.figma.com/design/e4zHANtKvQJpXJAVmudLab/OpenJournal-WireFrame-1?node-id=0-1&t=GyPYS0mBYTjVQBmf-1)
 
 ## Notes
 
