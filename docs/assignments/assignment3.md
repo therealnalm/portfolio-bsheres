@@ -18,7 +18,7 @@ layout: doc
 |        Purpose        | To allow users to record and/or communicate their thoughts and feelings via text and visuals |
 | Operational Principle |      A user writes a piece of text to accompany some visuals and it can be viewed later      |
 |         State         |                              caption: Text, visuals: set Image                               |
-|        Actions        |                       create(text: String, visuals: Image[]), show();                        |
+|        Actions        |                       create(text: String, visuals: Image\[]), show();                       |
 
 # Journaling \[Entry]
 
@@ -70,7 +70,7 @@ sync respond(poster: Party, respondTo: Thread, text: String, image: Image)
 - if (checkPerm(poster, Journalviewers) && !hasNext(respondTo))-> respondTo.journal.add(myEntry) else throw error
 - respondTo.addToEnd(response)
 
-sync createJournal(owner: Party, name: String, members: Party[])
+sync createJournal(owner: Party, name: String, members: Party\[])
 
 - const Journal = Journal.create(name)
 - Owner.Friending.checkFriend(members)
