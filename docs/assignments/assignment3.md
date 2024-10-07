@@ -67,7 +67,7 @@ sync post(poster: Party, text: String, images: Image, journal: Journal)
 sync respond(poster: Party, respondTo: Thread, text: String, image: Image)
 
 - const response = Entry.create(text, images)
-- if (checkPerm(poster, Journalviewers) && !hasNext(respondTo)){respondTo.journal.add(myEntry)} else {throw error}
+- if (checkPerm(poster, Journalviewers) && !hasNext(respondTo))-> respondTo.journal.add(myEntry) else throw error
 - respondTo.addToEnd(response)
 
 sync createJournal(owner: Party, name: String, members: Party[])
@@ -78,7 +78,7 @@ sync createJournal(owner: Party, name: String, members: Party[])
 
 sync viewEntry(poster: Party, viewer: Party, post: Entry)
 
-- if (Entry.Journal.checkPerm(viewer, view)) {post.show()}
+- if (Entry.Journal.checkPerm(viewer, view)) -> post.show()
 
 ## Dependencies
 
