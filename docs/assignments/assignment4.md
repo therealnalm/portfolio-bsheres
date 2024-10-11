@@ -79,43 +79,6 @@ Update: I decided that journals would need owners as part of the concept so I've
 **Permissioning**
 Permissioning is represented where each user has their own permissioning doc that stores their user as well as an array of permission that they have. I struggled to determine how to represent these permissions since it is a bit challenging for equality-checking to compare functions stored elsewhere but am hoping that I can store each perm as the string of the journal they have access to since journals are all unique. Additionally, as I'm implementing permissioning, I'm realizing its actually very similar to journaling and I'm not sure if they should just be built off the same concept...
 
-## Restful Routes
-
-Threads
-
-createThread(session: SessionDoc, journal: ObjectId, entry: ObjectId, head: ObjectId)- post("/thread")
-removeFromThread(session: SessionDoc, journal: ObjectId, entry: ObjectId)- delete("/thread")
-getNextInThread(session: SessionDoc, journal: ObjectId, entry: ObjectId)- get("/thread/next")
-getPrevInThread(session: SessionDoc, journal: ObjectId, entry: ObjectId)- get("/thread/prev")
-getThread(session: SessionDoc, journal: ObjectId, entry: ObjectId)- get("/thread")
-
-journals
-
-createJournal(session: SessionDoc, journal: string)- post("/journals")
-deleteJournal(session: SessionDoc, journalid: string)- delete("/journals")
-getAllJournals(session: SessionDoc)- get("/journals")
-addJournalEntry(session: SessionDoc, journalid: string, entry: Object)- post("/journals/:journalid")
-removeJournalEntry(session: SessionDoc, journalid: string, \_id: string)- delete("/journals/:journalid/:\_id")
-getJournalContents(session: SessionDoc, journalid: string)- get("/journals/:journalid")
-addJournalUser(session: SessionDoc, journalid: string, username: string)- post("/journals/users/:username")
-removeJournalUser(session: SessionDoc, journalid: string, username: string)- delete("/journals/users/:username")
-getJournalUsers(session: SessionDoc, journalid: string)- get("/journals/users")
-
-friends
-
-getAddedFriends(session: SessionDoc)- get("/friends")
-removeFriend(session: SessionDoc, friend: string)- delete("/friends/:friend")
-addFriend(session: SessionDoc, to: string)- post("/friend/add/:to")
-
-## Synchronizations
-
-User: Jack:  
-pw: Jack
-post : JackPost: 670890eb0f86e4616b1e2ea2
-Journal: Jack Journal: 6708912b4b78e59b56584112
-
-## Deployment
-
 ## Design Reflections
 
 Permissioning: After the initial milestone, I decided to change the design of my permissioning concept. Whereas originally the state contained a mapping of users to the journals, I changed my mind and decided to map from individual journals to the users that can view/use them. This should make syncing journaling with the permission concept easier for creation of new journals. Although it will be a bit harder for users to quickly query which journals they have access to, it should still be doable.
