@@ -9,7 +9,7 @@ layout: doc
 
 > Hunch: I would like to build a social media app for people who want a simpler experience to stay in touch with their friends. Users of Instagram, Snapchat, and others are getting caught up in all the other offerings and ads.
 
-I'd chose to interview 2 relatively busy and/or succesful people who are at very different points in their life but still find time for social media. I'd like to interview one person who is very involved on multiple social media platforms and one person who is less active on social media. I'd like the latter person to be someone who has used social media for a long time as well in hopes that I can get perspective on how they've reacted to it changing over time. Since I do not use social media and do not have my own college-aged perspective, I would like to interview one person who fits that demographic.
+I'd chose to interview 2 relatively busy and/or succesful people who are at very different points in their life but still find time for social media. I'd like to interview one person who is very involved on multiple social media platforms and one person who is less active on social media. I'd like the latter person to be someone who has used social media for a long time as well in hopes that I can get perspective on how they've reacted to it changing over time. Since I do not use social media and do not have my own college-aged perspective, I would like to interview one person who fits that demographic. This idea was in part inspired by [this article](https://www.theverge.com/2023/4/18/23672769/social-media-inevitable-death-monetization-growth-hacks)
 
 ## Interview Questions
 
