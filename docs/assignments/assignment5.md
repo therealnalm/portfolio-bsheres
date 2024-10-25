@@ -7,8 +7,6 @@ layout: doc
 
 > <a href="https://104-frontend-starter.vercel.app/">Vercel Deployment</a><br> <a href="https://github.com/therealnalm/104-frontend-starter">Frontend Starter GitHub</a>
 
-## Starter Code
-
 ## Hueristic Evaluation
 
 # Usability Criteria:
@@ -56,8 +54,12 @@ layout: doc
 - Although the interface does not have much text to describe the functions of each button, the tooltip will provide more info
 - It could be useful to consider how to create a stronger information scent in certain processes
 
-## Reactive Components
+## Color Study
 
-## Visual Design Study
+![Fall-Colors](../../assets/images/Fall.jpg)
+
+![Succulent-Colors](../../assets/images/Succulents.jpg)
 
 ## Styling and Layout
+
+I had grand visions for my layout and styling. Unfortunately, they became grand illusions because I spent 30 hours working on the app's functionality and didn't have any time left to style or upgrade the layout. Hopefully you can see the vision in my Heuristic evaluation.
