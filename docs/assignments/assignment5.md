@@ -56,9 +56,9 @@ layout: doc
 
 ## Color Study
 
-![Fall-Colors](../../assets/images/Fall.jpg)
+![Fall-Colors](../../assets/images/Fall.png)
 
-![Succulent-Colors](../../assets/images/Succulents.jpg)
+![Succulent-Colors](../../assets/images/Succulents.png)
 
 ## Styling and Layout
 
