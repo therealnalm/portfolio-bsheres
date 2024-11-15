@@ -5,7 +5,7 @@ layout: doc
 
 # Blog 3: Response to Nisha's Post on PlantIt
 
-[Origial Post](https://nisha-nathan.github.io/portfolio-nisha/blogs/blog5.html)
+[Original Post](https://nisha-nathan.github.io/portfolio-nisha/blogs/blog5.html)
 
 Nisha! I'm glad you understood what we were aiming for and the concept of something small and somewhat cutesy appealed to you like it did for us :D. We've also had a lot of discussions about who to target and agree that moving forward with students or non-professional projects is probably the best way to go. That said your comment about linking a more tangible motivator to progress got me thinking....
 
